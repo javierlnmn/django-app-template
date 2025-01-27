@@ -52,3 +52,13 @@ and
 ```
 python manage.py runserver
 ```
+
+### Running in Docker
+To run the development server in Docker, use the following command:
+```
+docker-compose -f docker/dev/docker-compose.yaml up
+```
+This will run 3 services:
+- MySQL database
+- Tailwind compiler
+- Django web server
