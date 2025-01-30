@@ -3,7 +3,7 @@ x-app: &default-app
     context: ../../
     dockerfile: ./docker/dev/Dockerfile
   volumes:
-    - ../../:/app
+    - ../../:/data/app
   env_file:
     - .env
 
