@@ -49,15 +49,26 @@ and
 poetry run python manage.py runserver
 ```
 
-### Running in Docker
-
-To run the development server in Docker, use the following command:
+Alternatively, you can use Docker to run the development server:
 
 ```
-docker-compose -f docker/dev/docker-compose.yaml up
+docker-compose -f docker/dev/docker-compose.dev.yaml up
 ```
 
-This will run 2 services:
+### Running in Production
 
-- Tailwind compiler
-- Django web server
+To run the production server we recommend using Docker.
+You will need to set up the following environment variables:
+
+- `DEBUG`: Set to `False`
+- `SECRET_KEY`: A random secret key
+- `ALLOWED_HOSTS`: A comma-separated list of allowed hosts
+- `CSRF_TRUSTED_ORIGINS`: A comma-separated list of trusted origins
+
+You can set these variables in the _.env_ file.
+
+Then run the following command to start the production server:
+
+```
+docker-compose -f docker-compose.prod.yaml up
+```
